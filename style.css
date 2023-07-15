@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -22,7 +22,7 @@ body{
 }
 
 #app-container{
-    /* display: none; */
+    display: none;
     /* opacity: 0; */
     height: auto;
     width: 27vw;
@@ -136,9 +136,6 @@ body{
 .inner-box:hover{
     cursor: pointer;
 }
-
-
-
 
 
 #score{
@@ -283,8 +280,115 @@ body{
     width: 100vw;
 }
 
+
+
+#pick-player-screen{
+    height: 50vh;
+    width: 27vw;
+    position: absolute;
+    top: 25%;
+    left: 36.5vw;
+}
+#xo-img-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#xo-img-container img{
+    height: 3vw;
+    margin: 0 1%;
+}
+#select-player-container{
+    padding: 2%;
+    height: auto;
+    text-align: center;
+    margin-top: 2vh;
+    background-color: #2c5364;
+    border-radius: 10px;
+}
+
+#select-player-container button{
+    height: 3vw;
+}
+#select-player-container button img{
+    height: 2vw;
+}
+
+#select-player-container span{
+    display: block;
+    color: #A8BFC9;
+    margin-top: 1vh;
+}
+
+.mark-btn{
+    margin-top: 2vh;
+    width: 9vw;
+}
+
+#x-btn{
+    border: none;
+    border-radius: 10px;
+    background-color: #0F2027;
+    cursor: pointer;
+}
+
+#o-btn{
+    border: none;
+    border-radius: 10px;
+    background-color: #0F2027;
+    cursor: pointer;
+}
+
+#reminder-text{
+    color:#0F2027;
+    font-size: smaller;
+    font-weight: 500;
+}
+
+#game-mode{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+#vs-cpu{
+    background-color: #F2B137;
+    display: block;
+    width: 90%;
+    margin: 1vh;
+    height: 6vh;
+    box-shadow: 0 0.6vh #0f202764;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#vs-player{
+    background-color: #31C3BD;
+    display: block;
+    width: 90%;
+    margin: 1vh;
+    height: 6vh;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0.6vh #0f202764;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
 @media screen and (max-width:500px ){
     #app-container{
+        margin-top: 45%;
         width: 90vw;
     }
     #top-container{
@@ -333,7 +437,7 @@ body{
         font-size: 3vh;
     }
     .winning-state{
-        top:17%
+        top:35%
     }
     .text{
         font-size: 3vh;
@@ -369,95 +473,3 @@ body{
 
 
 
-/*
-    Player vc computer options!
-
-#pick-player-screen{
-    height: 50vh;
-    width: 27vw;
-    margin: auto;
-}
-#xo-img-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#xo-img-container img{
-    height: 3vw;
-    margin: 0 1%;
-}
-#select-player-container{
-    padding: 2%;
-    height: auto;
-    text-align: center;
-    margin-top: 2vh;
-    background-color: #2c5364;
-    border-radius: 10px;
-}
-
-#select-player-container button{
-    height: 3vw;
-}
-#select-player-container button img{
-    height: 2vw;
-}
-
-#select-player-container span{
-    display: block;
-    color: #A8BFC9;
-    margin-top: 1vh;
-}
-
-.mark-btn{
-    margin-top: 2vh;
-    width: 9vw;
-}
-
-#x-btn{
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(23, 39, 71);
-    cursor: pointer;
-}
-
-#o-btn{
-    border: none;
-    border-radius: 10px;
-    background-color: #e9ffb0;
-    cursor: pointer;
-}
-
-#game-mode{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2vh;
-}
-
-#vs-cpu{
-    background-color: #F2B137;
-    display: block;
-    width: 90%;
-    margin: 1vh;
-    height: 6vh;
-    box-shadow: 0 0.6vh #0f202764;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-#vs-player{
-    background-color: #B0DAFF;
-    display: block;
-    width: 90%;
-    margin: 1vh;
-    height: 6vh;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 0.6vh #0f202764;
-    cursor: pointer;
-}
-*/

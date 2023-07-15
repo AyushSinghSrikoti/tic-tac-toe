@@ -18,6 +18,7 @@ const quitButton=document.getElementsByClassName('quit');
 const NextRoundButton=document.getElementsByClassName('next-round');
 const text=document.getElementsByClassName('text');
 const roundWinner=document.getElementsByClassName('round-winner');
+let rowIndex,colIndex;
 quitButton[0].onclick=function(){
     window.location.reload();
 }
@@ -39,7 +40,6 @@ function NextRound(){
         winningScreen.classList.remove("animate__rollOut");
         winningScreen.style.display="none";
     },1000);
-    playerTurn.innerHTML='<img class="animate__animated animate__headShake" src="./images/icon-x.svg" height=24px> Turn';
 }
 
 function MatchResult(arr){
@@ -57,7 +57,7 @@ function MatchResult(arr){
     }
     else if(turn=='o'){
         oCount++;
-        text[0].innerHTML="you won!";
+        text[0].innerHTML="you lost!";
         roundWinner[0].innerHTML='<img src="./images/icon-o.svg"> <span> takes the round</span>';
         roundWinner[0].style.color="#F2B137";
     }
@@ -145,30 +145,41 @@ for(let i of getCells){
         }
     })
 
+    let gameOver=false;
     i.addEventListener('click',function(){
-        steps++;
         if(turn=='x'){
+            steps++;
             if(board[row][col]!='x' && board[row][col]!='o'){
-                playerTurn.innerHTML='<img class="animate__animated animate__headShake" src="./images/icon-o.svg" height=24px> Turn';
                 i.innerHTML='<img class="animate__animated animate__bounceIn" src="./images/icon-x.svg">';
                 board[row][col]='x';
-                if(steps>4){
-                    checkWin();
+                if(steps>3){
+                    gameOver=checkWin();
                 }
-                turn='o';
+                playerTurn.innerHTML='<img class="animate__animated animate__headShake" src="./images/icon-o.svg" height=24px> Turn';
+            }
+            turn='o';
+            steps++;
+            if(gameOver==false){
+                let delayedPlacement=setTimeout(function(){
+                    rowIndex=Math.floor(Math.random()*3);
+                    colIndex=Math.floor(Math.random()*3);
+                    while((board[rowIndex][colIndex]=='x' || board[rowIndex][colIndex]=='o') && steps<9){
+                        rowIndex=Math.floor(Math.random()*3);
+                        colIndex=Math.floor(Math.random()*3);
+                    }
+                    console.log(rowIndex,colIndex,steps);
+                    getCells[(3*rowIndex)+colIndex].innerHTML='<img class="animate__animated animate__bounceIn" src="./images/icon-o.svg">';
+                    // i.innerHTML='<img class="animate__animated animate__bounceIn" src="./images/icon-o.svg">';
+                    board[rowIndex][colIndex]='o';
+                    if(steps>3){
+                        checkWin();
+                    }
+                    playerTurn.innerHTML='<img class="animate__animated animate__headShake" src="./images/icon-x.svg" height=24px> Turn';
+                    turn='x';
+                },700);
             }
         }
-        else{
-            if(board[row][col]!='x' && board[row][col]!='o'){
-                playerTurn.innerHTML='<img class="animate__animated animate__headShake" src="./images/icon-x.svg" height=24px> Turn';
-                i.innerHTML='<img class="animate__animated animate__bounceIn" src="./images/icon-o.svg">';
-                board[row][col]='o';
-                if(steps>4){
-                    checkWin();
-                }
-                turn='x';
-            }
-        }
+
     });
 }
 
