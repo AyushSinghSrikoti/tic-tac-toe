@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic Tac Toe</title>
+    <link rel="icon" type="image/x-icon" href="./images/icon-x.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/7bd2da3c95.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="app-container" class="animate__animated animate__bounceInUp" >
+    <!-- <div id="app-container" > -->
+        <div id="top-container">
+            <!-- <div><i class="fa-sharp fa-solid fa-xmark cross"></i><i class="fa-regular fa-circle circle"></i></div> -->
+            <div id="x-o">
+                <img class="animate__animated animate__bounce " src="./images/icon-x.svg">
+                <img class="animate__animated animate__bounce " src="./images/icon-o.svg">
+                <!-- <i id="x" class="fa-solid fa-x fa-beat-fade"></i>
+                <i id="o" class="fa-solid fa-o fa-beat-fade"></i> -->
+            </div>
+            <div id="turn">
+                <!-- <i class="fa-sharp fa-solid fa-xmark cross"></i> -->
+                <!-- <i class="fa-solid fa-x fa-beat-fade"></i>Turn -->
+                <!-- <img class=" animate__animated fa-beat-fade animate__delay-1s" src="./images/icon-x.svg" height="24px" >Turn -->
+                <img class=" animate__animated animate__headShake animate__delay-1s" src="./images/icon-x.svg"
+                    height="24px">Turn
+            </div>
+            <div id="reload">
+                <i class="fa-solid fa-rotate-right"></i>
+            </div>
+        </div>
+        <!-- creating the outer box that contains 'X' and 'O' -->
+        <div id="outer-box">
+            <!-- creating individual boxes for 'X' and 'O' -->
+            <!-- <div class="inner-box"><i class="fa-solid fa-x fa-beat-fade"></i></div>
+            <div class="inner-box"><i class="fa-solid fa-o fa-beat-fade"></i></div> -->
+            <div class="inner-box" row="0" col="0"></div>
+            <div class="inner-box" row="0" col="1"></div>
+            <div class="inner-box" row="0" col="2"></div>
+            <div class="inner-box" row="1" col="0"></div>
+            <div class="inner-box" row="1" col="1"></div>
+            <div class="inner-box" row="1" col="2"></div>
+            <div class="inner-box" row="2" col="0"></div>
+            <div class="inner-box" row="2" col="1"></div>
+            <div class="inner-box" row="2" col="2"></div>
+        </div>
+        <div id="score">
+            <div id="your-score" class="inner-score">
+                <img src="./images/icon-x-transparent.svg" height="20vw"> 
+                <p class="sub-score">0</p>
+            </div>
+            <div id="tie" class="inner-score">
+                <p class="score-heading">TIES</p>
+                <p class="sub-score" >0</p>
+            </div>
+            <div id="cpu-score" class="inner-score">
+                <img src="./images/icon-o-transparent.svg" height="20vw"> 
+                <p class="sub-score" >0</p>
+            </div>
+        </div>
+    </div>
+    <div class="black-bg"></div>
+    <div id="winning-screen" class="winning-state animate__animated animate__jackInTheBox">
+        <div class="text">YOU WON!</div>
+            <div class="round-winner"><img src="./images/icon-x.svg"> <span> takes the round</span></div>
+        
+        <div class="buttons">
+            <div class="quit">quit</div>
+            <div class="next-round">next round</div>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------pick-player-screen----------------------------
+
+    <div id="pick-player-screen">
+        <div id="xo-img-container">
+            <img src="./images/icon-x.svg"><img src="./images/icon-o.svg">
+        </div>
+        <div id="select-player-container">
+            <span id="pick-txt">PICK PLAYER AND MARK</span>
+            <button class="mark-btn" id="x-btn"><img src="./images/icon-x.svg" class="xo2"></button>
+            <button class="mark-btn" id="o-btn"><img src="./images/icon-o.svg" class="xo2" ></button>
+            <span id="reminder-text">REMEMBER X GOES FIRST</span>
+        </div>
+        <div id="game-mode">
+            <button id="vs-cpu">NEW GAME (VS CPU)</button>
+            <button id="vs-player">NEW GAME (VS PLAYER)</button>
+        </div>
+    </div> -->
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
